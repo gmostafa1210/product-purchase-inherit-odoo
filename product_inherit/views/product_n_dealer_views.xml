@@ -3,7 +3,7 @@
 <odoo>
 
     <record id="action_productwiki_addon" model="ir.actions.act_window">
-        <field name="name">Product Info</field>
+        <field name="name">Product Brand</field>
         <field name="res_model">product.wiki</field>
         <field name="view_mode">tree,form</field>
     </record>
@@ -11,11 +11,11 @@
     <menuitem
         id="menu_productwiki_owner"
         action="action_productwiki_addon"
-        name="Product Info"
+        name="Product Brand"
         parent="sale.menu_sale_config"/>
 
     <record id="action_dealerwiki_addon" model="ir.actions.act_window">
-        <field name="name">Dealer Info</field>
+        <field name="name">Dealer Name</field>
         <field name="res_model">dealer.wiki</field>
         <field name="view_mode">tree,form</field>
     </record>
@@ -23,7 +23,7 @@
     <menuitem
         id="menu_dealerwiki_owner"
         action="action_dealerwiki_addon"
-        name="Dealer Info"
+        name="Dealer Name"
         parent="sale.menu_sale_config"/>
 
 </odoo>
