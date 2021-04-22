@@ -15,6 +15,3 @@ class PurchaseLineNew(models.Model):
         if self.product_id:
             self.brand_id = self.product_id.product_brand.id
 
-    def write(self, values):
-        values['brand_id'] = self.product_id.product_brand.id
-        return super(PurchaseLineNew, self).write(values)
