@@ -7,6 +7,7 @@
     'depends' : ['base', 'purchase', 'product_inherit', 'sale', 'sale_management'],
     'data': [
         'views/purchase_new_views.xml',
+        'views/purchase_filter_views.xml',
     ],
     'installable': True,
     'application': True,
