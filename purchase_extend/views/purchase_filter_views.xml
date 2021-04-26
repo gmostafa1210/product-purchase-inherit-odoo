@@ -13,9 +13,9 @@
                             <field name="date_from"/>
                             <field name="date_to"/>
                         </group>
-                        <!-- <group>
+                        <group>
                             <field name="is_true"/>
-                        </group> -->
+                        </group>
                     </group>
                 </sheet>
                 <footer>
