@@ -51,7 +51,7 @@ class PurchaseFilter(models.TransientModel):
  
         if not self.add_filter and not self.add_date:
             raise UserError (_("Select 'Add Date' or 'Add Filter' or both.")) 
-        if len(my_list) == 0:
+        elif len(my_list) == 0:
             raise UserError (_("No product found."))
         else:      
             return {
