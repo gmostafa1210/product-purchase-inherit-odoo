@@ -48,14 +48,18 @@ class PurchaseFilter(models.TransientModel):
 
         else:
             my_list = []
-
-                
-        return {
-            'name': 'Filtered Orders',
-            'type': 'ir.actions.act_window',
-            'res_model': 'purchase.order',
-            'view_mode': 'tree,form',
-            'domain': [('id','in',my_list)]
-        }
+ 
+        if not self.add_filter and not self.add_date:
+            raise UserError (_("Select 'Add Date' or 'Add Filter' or both.")) 
+        if len(my_list) == 0:
+            raise UserError (_("No product found."))
+        else:      
+            return {
+                'name': 'Filtered Orders',
+                'type': 'ir.actions.act_window',
+                'res_model': 'purchase.order',
+                'view_mode': 'tree,form',
+                'domain': [('id','in',my_list)]
+            }
         
          
