@@ -18,6 +18,10 @@ class PurchaseFilter(models.TransientModel):
         my_list = []
 
         if self.add_filter and self.add_date:
+
+            if self.date_from >= self.date_to:
+                raise UserError (_("Invalid Date Input."))
+
             product_ids = self.env['purchase.order.line'].search([])
             for i in product_ids:
                 if i.qty_received > 0 and i.qty_invoiced < i.qty_received:
@@ -34,6 +38,10 @@ class PurchaseFilter(models.TransientModel):
 
 
         elif self.add_date:
+
+            if self.date_from >= self.date_to:
+                raise UserError (_("Invalid Date Input."))
+                
             product_date_ids = self.env['purchase.order'].search([('date_approve','>=',self.date_from),('date_approve','<=',self.date_to)])
         
             for j in product_date_ids:

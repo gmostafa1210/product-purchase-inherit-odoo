@@ -14,8 +14,8 @@
                             <field name="add_filter"/>
                         </group>
                         <group>
-                            <field name="date_from" attrs="{'invisible': [('add_date','=',False)]}"/>
-                            <field name="date_to" attrs="{'invisible': [('add_date','=',False)]}"/>
+                            <field name="date_from" attrs="{'invisible': [('add_date','=',False)],'required': [('add_date','=',True)]}"/>
+                            <field name="date_to" attrs="{'invisible': [('add_date','=',False)],'required': [('add_date','=',True)]}"/>
                         </group>
                     </group>
                 </sheet>
