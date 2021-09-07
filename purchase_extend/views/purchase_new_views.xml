@@ -5,7 +5,6 @@
         <field name="name">purchase.order.new.inherit</field>
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.purchase_order_form"/>
-
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position='attributes'>
                 <attribute name='domain'>[('is_company','=',False)]</attribute>
@@ -19,8 +18,13 @@
             <xpath expr="//field[@name='product_id']" position='attributes'>
                 <attribute name="domain">[('dealer', '=', parent.dealer)]</attribute>
             </xpath>
+            <xpath expr="//field[@name='taxes_id']" position='after'>
+                <field name="price_tax" string="Price Tax"/>
+            </xpath>
+            <xpath expr="//field[@name='price_tax']" position='after'>
+                <field name="discount"/>
+            </xpath> 
         </field>
-        
     </record>
 
 </odoo> 

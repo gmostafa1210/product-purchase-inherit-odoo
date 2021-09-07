@@ -8,6 +8,8 @@
     'data': [
         'views/purchase_new_views.xml',
         'views/purchase_filter_views.xml',
+        'views/sale_order_view.xml',
+        'views/account_move_view.xml',
     ],
     'installable': True,
     'application': True,
